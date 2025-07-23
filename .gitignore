@@ -1,41 +1,8 @@
-# === Python cache files ===
-__pycache__/
-*.py[cod]
-*.so
-*.egg
-*.egg-info/
-dist/
-build/
+# Ignore everything
+*
 
-# === Jupyter/IPython ===
-.ipynb_checkpoints/
-
-# === Virtual environments ===
-env/
-venv/
-.venv/
-
-ENV/
-
-# === OS files ===
-.DS_Store
-Thumbs.db
-
-# === Model files ===
-*.pt
-*.pth
-
-# === Saved embeddings and filenames ===
-clip_embeddings.pt
-filenames.txt
-graph_data.pt
-
-# === HTML visualizations ===
-*.html
-
-# === Logs and temp ===
-*.log
-*.tmp
-/images/
-/lib/
-/.idea/
+# But not these files
+!.gitignore
+!img.png
+!Readme.md
+!script.py
