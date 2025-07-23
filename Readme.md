@@ -1,4 +1,4 @@
-# 🪙 Prägefolgen antiker Münzen mit GNNs vorhersagen
+# Prägefolgen antiker Münzen mit GNNs vorhersagen
 
 Dieses Projekt nutzt ein Graph Neural Network (GNN) mit Bild-Embeddings, um **die Prägereihenfolge antiker Münzen** vorherzusagen.
 
@@ -6,7 +6,7 @@ Dieses Projekt nutzt ein Graph Neural Network (GNN) mit Bild-Embeddings, um **di
 
 ---
 
-## 🔧 Vorbereitung
+## Vorbereitung
 
 1. **Excel-Datei hinzufügen**
    `Stempelliste_bueschel_Neuses_einfach.xlsx` ins Projektverzeichnis legen.
@@ -22,7 +22,7 @@ Dieses Projekt nutzt ein Graph Neural Network (GNN) mit Bild-Embeddings, um **di
 
 ---
 
-## 🧠 Modell
+## Modell
 
 * Verwendet **CLIP** für Bild-Embeddings.
 * Lernt mit einem GAT-Modell Münzfolgen aus Ground-Truth-Ketten.
@@ -30,7 +30,7 @@ Dieses Projekt nutzt ein Graph Neural Network (GNN) mit Bild-Embeddings, um **di
 
 ---
 
-## 📊 Ausgabe
+## Ausgabe
 
 * Visualisierung des Graphs mit Bildern
 * HTML-Dateien mit Vorhersagepfaden

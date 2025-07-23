@@ -206,7 +206,7 @@ def stepwise_sequence_prediction(data, encoder, filenames, prediction_tasks, top
                 top_indices = torch.topk(sims, top_k).indices.tolist()
                 hit = true_next in top_indices
                 sequence_hits.append(hit)
-                # print(f"{filenames[current_node]} ➔ {filenames[true_next]} | {'✔️' if hit else '❌'}")
+                print(f"{filenames[current_node]} ➔ {filenames[true_next]} | {'Correct' if hit else 'Incorrect'}")
                 current_node = true_next
 
             results.append(sequence_hits)
@@ -242,7 +242,7 @@ def predict_next_in_sequence(data, encoder, filenames, ground_truth_pairs, top_k
 
             is_in_gt = idx in all_gt_nodes
 
-            # 🚫 Completely block start and middle nodes from predicting
+            # Completely block start and middle nodes from predicting
             if is_in_gt and (idx in start_nodes or idx in middle_nodes):
                 predictions[filenames[idx]] = []
                 continue  # Skip to next node
@@ -383,7 +383,7 @@ def visualize_prediction_paths(prediction_tasks, stepwise_results, filenames, im
     for source, target, data in graph.edges(data=True):
         hit = data.get("hit", False)
         color = "green" if hit else "red"
-        title = "✔️ Correct" if hit else "❌ Incorrect"
+        title = "Correct" if hit else "Incorrect"
         net.add_edge(source, target, color=color, title=title)
 
     net.show(output_file, notebook=False)
