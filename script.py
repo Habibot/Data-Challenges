@@ -36,12 +36,14 @@ clip_model, preprocess = clip.load("ViT-B/32", device="cpu")
 
 # === Embedding Extraction ===
 def extract_clip_embeddings(image_dir):
-    image_paths = sorted([f for f in os.listdir(image_dir) if f.endswith(".jpg")])
+    image_paths = sorted([f for f in os.listdir(image_dir) if f.endswith(".png")])
     embeddings = []
     filenames = []
 
     for fname in tqdm(image_paths, desc="Extracting CLIP embeddings"):
-        img = Image.open(os.path.join(image_dir, fname)).convert("RGB")
+        img = Image.open(os.path.join(image_dir, fname))
+        if img.mode != 'RGB':
+            img = img.convert("RGB")
         image_input = preprocess(img).unsqueeze(0)
         with torch.no_grad():
             emb = clip_model.encode_image(image_input).squeeze(0)
